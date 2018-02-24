@@ -86,11 +86,13 @@ app.use(passport.session());
 var index = require('./routes/index');
 var users = require('./routes/users');
 const authRoutes = require("./routes/auth-routes");
+const games = require('./routes/games');
 
 // Directory
 app.use("/", authRoutes);
 app.use('/', index);
 app.use('/users', users);
+app.use('/', games);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
