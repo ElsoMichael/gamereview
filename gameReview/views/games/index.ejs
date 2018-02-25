@@ -1,7 +1,9 @@
-<ul>
-  <% list.forEach((game) => { %>
-    <li>
-      <%= game.name %>
-    </li>
-  <% }); %>
-</ul>
+<div class="container moreSpace">
+  <div class="row">
+    <% list.forEach((game) => { %>
+      <div class="col-lg-12 game-search-spacing">
+        <a href="/"><img src="<%= game.cover.url %>"></a>
+      </div>
+    <% }); %>
+  </div>
+</div>

@@ -1,8 +1,56 @@
-body {
+/* body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+} */
 
 a {
   color: #00B7FF;
+}
+
+.boarder-box {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 60px;
+  background-color: rgba(255,255,255, .5);
+}
+
+.moreSpace {
+  margin-top: 80px;
+}
+
+.search-background {
+  padding: 90px 0;
+  background-image: url("../images/spacebackground.jpg");
+  background-size: cover;
+  background-position: center;
+  border-bottom: 5px solid;
+  box-shadow: 0px 4px 10px 0 rgba(22, 22, 22, 0.08);
+}
+
+h1 {
+  color: white;
+}
+
+.background-auth {
+  background-image: url("../images/spacebackground.jpg");
+  background-size: cover;
+}
+
+.container-spacing {
+  margin-top: 100px;
+}
+
+.game-search-spacing {
+  margin-bottom: 30px;
+  padding: 10px;
+  display: inline;
+}
+
+.game-name {
+  display: inline;
+  padding-left: 20px;
+}
+
+.nav-spacing {
+  padding-right: 10px;
 }

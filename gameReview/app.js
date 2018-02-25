@@ -19,7 +19,7 @@ const flash = require("connect-flash");
 
 // IDGB API Config
 const igdb = require('igdb-api-node').default;
-const client = igdb('f14503ac37b7f24e3f23b0277ba67084');
+const client = igdb('1accb007bd5cc4dad101e324f97acb0e');
 
 // Models
 const User = require("./models/user");
