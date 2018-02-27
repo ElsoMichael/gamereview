@@ -1,0 +1,95 @@
+<% game.forEach((game) => { %>
+
+  <div class="search-background">
+    <h1 class="text-center moreSpace"><%= game.name %></h1>
+  </div>
+  
+  <div class="container moreSpace">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Summary</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Storyline</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Review</a>
+        </li>
+      </ul>
+      
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <h3 class="text-center">Summary</h3>
+          <% if(game.summary) { %>
+            <p class="text-center moreSpaceBottom"><%= game.summary %></p>
+          <% } else { %>
+            <p class="text-center moreSpaceBottom"> class="text-center"Theres No Summary for this game.</p>
+            <% } %>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <h3 class="text-center">Storyline</h3>
+          <% if(game.storyline) { %>
+            <p class="text-center moreSpaceBottom"><%= game.storyline %></p>
+          <% } else { %>
+            <p class="text-center moreSpaceBottom">Theres No Storyline for this game.</p>
+          <% } %>
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+          <% if(game.rating) { %>
+            <h3 class="text-center moreSpaceBottom">Rating: <%= Math.floor(game.rating) %></h3>
+          <% } else { %>
+            <p class="text-center moreSpaceBottom">Theres No Rating's for this game.</p>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+  <div class="scrollImages">
+    <div class="container moreSpace">
+      <div class="row">
+
+        <div class="col-lg-4 col-lg-offset-1">
+          <% if(game.screenshots) { %>
+            <% game.screenshots.forEach((img) => { %>
+              <img class="zoom scroll-side" src="https://images.igdb.com/igdb/image/upload/t_screenshot_big/<%= img.cloudinary_id %>">
+          <% }); %>
+            <% } else { %>
+              <p>Theres No Screenshots for this game.</p>
+            <% } %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+      <!-- <div class="col-lg-12">
+        <h3>Summary</h3>
+        <% if(game.summary) { %>
+          <p><%= game.summary %></p>
+        <% } else { %>
+          <p>Theres No Summary for this game.</p>
+        <% } %>
+      </div>
+
+      <div class="col-lg-12">
+        <h3>Storyline</h3>
+        <% if(game.storyline) { %>
+          <p><%= game.storyline %></p>
+        <% } else { %>
+          <p>Theres No Storyline for this game.</p>
+        <% } %>
+        </div>
+
+      <div class="col-lg-12">
+        <h3><%= game.rating %></h3>
+      </div> -->
+
+      <!-- <div class="col-lg-12">
+        <% game.release_dates.forEach((date) => { %>
+          <% if(game.release_dates) { %>
+            <p><%= date.human %> <%= date.platform.name %></p>
+          <% } else { %>
+            <p>Theres No Storyline for this game.</p>
+          <% } %>
+        <% }); %>
+      </div> -->
+<% }); %>

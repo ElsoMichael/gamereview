@@ -2,7 +2,11 @@
   <div class="row">
     <% list.forEach((game) => { %>
       <div class="col-lg-12 game-search-spacing">
+        <% if(game.cover){%>
         <a href="/"><img src="<%= game.cover.url %>"></a>
+        <% } %>
+        <h4 class="game-name"><a href="/games/<%= game.id %>"><%= game.name %></a></h4>
+        <h5 class="game-name"><%= game.id %></h5>
       </div>
     <% }); %>
   </div>

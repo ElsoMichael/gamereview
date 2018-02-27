@@ -18,6 +18,10 @@ a {
   margin-top: 80px;
 }
 
+.moreSpaceBottom {
+  margin-bottom: 80px;
+}
+
 .search-background {
   padding: 90px 0;
   background-image: url("../images/spacebackground.jpg");
@@ -54,3 +58,39 @@ h1 {
 .nav-spacing {
   padding-right: 10px;
 }
+
+.scrollImages {
+  background-color: black;
+  overflow-y: auto;
+}
+
+.scroll-side {
+  display: inline;
+}
+
+
+
+
+
+/* .zoom {      
+  -webkit-transition: all 0.35s ease-in-out;    
+  -moz-transition: all 0.35s ease-in-out;    
+  transition: all 0.35s ease-in-out;     
+  cursor: -webkit-zoom-in;      
+  cursor: -moz-zoom-in;      
+  cursor: zoom-in;  
+  }     
+  
+  .zoom:hover,  
+  .zoom:active,   
+  .zoom:focus {
+  /**adjust scale to desired size, 
+  add browser prefixes**/
+  -ms-transform: scale(1);    
+  -moz-transform: scale(2);  
+  -webkit-transform: scale(2);  
+  -o-transform: scale(2);  
+  transform: scale(1.5);    
+  position:relative;      
+  z-index:100;
+  } */
