@@ -58,24 +58,13 @@ authRouths.post("/login", passport.authenticate("local", {
   passReqToCallback: true
 }));
 
-authRouths.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
-  res.render("private", { user: req.user });
+authRouths.get("/user-page", ensureLogin.ensureLoggedIn(), (req, res) => {
+  res.render("user-page", { user: req.user });
 });
 
-authRouths.get("/logout", (req, res) => {
+authRouths.get("/logout", ensureLogin.ensureLoggedIn(), (req, res) => {
   req.logout();
-  res.redirect("/login");
+  res.redirect("/");
 });
-
-// OAuth
-authRouths.get("/auth/google", passport.authenticate("google", {
-  scope: ["https://www.googleapis.com/auth/plus.login",
-          "https://www.googleapis.com/auth/plus.profile.emails.read"]
-}));
-
-authRouths.get("/auth/google/callback", passport.authenticate("google", {
-  failureRedirect: "/",
-  successRedirect: "/private-page"
-}));
 
 module.exports = authRouths;

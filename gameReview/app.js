@@ -82,6 +82,11 @@ passport.use(new localStrategy((username, password, next) => {
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(function (req, res, next) {
+  res.locals.login = req.isAuthenticated();
+  next();
+});
+
 // Routes 
 var index = require('./routes/index');
 var users = require('./routes/users');

@@ -16,15 +16,21 @@
         </div>
         <button type="submit" class="btn btn-color btn-default" value="Search">Search</button>
         </form>
-        <div class="hide">
-          <p class="navbar-text navbar-right nav-spacing"><a href="/" class="navbar-link">Log Out!</a></p>
-         </div>
-        <div>
-          <p class="navbar-text navbar-right nav-spacing"><a href="/login" class="navbar-link">Login In!</a></p>
-        </div>
-        <div>
-          <p class="navbar-text navbar-right nav-spacing"><a href="/signup" class="navbar-link">Sign Up!</a></p>
-        </div>
+        <% if (login) { %>
+          <div>
+            <p class="navbar-text navbar-right nav-spacing">Signed in as <a href="#" class="navbar-link">User Name</a></p>
+          </div>
+          <div>
+            <p class="navbar-text navbar-right nav-spacing"><a href="/logout" class="navbar-link">Log Out!</a></p>
+          </div>
+        <% } else {%>
+          <div>
+            <p class="navbar-text navbar-right nav-spacing"><a href="/login" class="navbar-link">Login In!</a></p>
+          </div>
+          <div>
+            <p class="navbar-text navbar-right nav-spacing"><a href="/signup" class="navbar-link">Sign Up!</a></p>
+          </div>
+        <% } %>
       </div>
     </nav>  
     <%- body -%>
@@ -33,6 +39,5 @@
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="../../public/javascripts/main.js"></script>
   </body>
 </html>

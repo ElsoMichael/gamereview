@@ -31,7 +31,7 @@ a {
   box-shadow: 0px 4px 10px 0 rgba(22, 22, 22, 0.08);
 }
 
-h1 {
+.color-text-white {
   color: white;
 }
 
@@ -45,7 +45,6 @@ h1 {
 }
 
 .game-search-spacing {
-  margin-bottom: 30px;
   padding: 10px;
   display: inline;
 }
@@ -59,38 +58,20 @@ h1 {
   padding-right: 10px;
 }
 
-.scrollImages {
-  background-color: black;
-  overflow-y: auto;
+.image-inline-scroll {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  margin: 0 5px;
 }
 
-.scroll-side {
-  display: inline;
+.background-dark{
+  border-radius: 10px;
+  padding: 50px;
 }
 
-
-
-
-
-/* .zoom {      
-  -webkit-transition: all 0.35s ease-in-out;    
-  -moz-transition: all 0.35s ease-in-out;    
-  transition: all 0.35s ease-in-out;     
-  cursor: -webkit-zoom-in;      
-  cursor: -moz-zoom-in;      
-  cursor: zoom-in;  
-  }     
-  
-  .zoom:hover,  
-  .zoom:active,   
-  .zoom:focus {
-  /**adjust scale to desired size, 
-  add browser prefixes**/
-  -ms-transform: scale(1);    
-  -moz-transform: scale(2);  
-  -webkit-transform: scale(2);  
-  -o-transform: scale(2);  
-  transform: scale(1.5);    
-  position:relative;      
-  z-index:100;
-  } */
+.img-view {
+  display: flex;
+  flex-flow: row nowrap;
+  overflow-y: scroll;
+}

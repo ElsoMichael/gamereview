@@ -10,10 +10,10 @@ games.post('/search', (req, res) => {
   // client.endpoint(options, [fields])
   client.games({
     search: req.body.search,
-    limit: 50
+    limit: 50,
     }, [
       'name',
-      'cover'
+      'cover',
     ])
   .then(res => {
     list = res.body;
