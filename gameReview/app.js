@@ -23,6 +23,7 @@ const client = igdb('1accb007bd5cc4dad101e324f97acb0e');
 
 // Models
 const User = require("./models/user");
+const UserGame = require("./models/user-game")
 
 // =====
 var app = express();
@@ -90,6 +91,7 @@ app.use(function (req, res, next) {
 // Routes 
 var index = require('./routes/index');
 var users = require('./routes/users');
+const userGame = require('./routes/userGames');
 const authRoutes = require("./routes/auth-routes");
 const games = require('./routes/games');
 
@@ -98,6 +100,7 @@ app.use("/", authRoutes);
 app.use('/', index);
 app.use('/users', users);
 app.use('/games', games);
+app.use('/userGames', userGame);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

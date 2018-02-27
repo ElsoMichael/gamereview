@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+      <h1 class="moreSpace text-center">Hello User</h1>
+
+      <h3 class="text-center">Games</h3>
+
+      <div class="col-lg-12">
+
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#AddGame" aria-controls="home" role="tab" data-toggle="tab">Add Game</a></li>
+            <li role="presentation"><a href="#YourGame" aria-controls="profile" role="tab" data-toggle="tab">Your Games</a></li>
+            <!-- <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li> -->
+          </ul>
+        
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="AddGame">
+              <form action="">
+                <div class="form-group">
+                  <br>
+                  <label for="Title">Game Title</label>
+                  <input type="text" class="form-control" name="title" placeholder="Space Invader">
+
+                  <br>
+                  <label for="Link">Link To Your Game</label>
+                  <input type="text" class="form-control" name="link" placeholder="Game Link">
+
+                  <br>
+                  <label for="Summary">Summary</label>
+                  <textarea type="text" class="form-control" name="summery" placeholder="About your Game" rows="6"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-default" value="Add Game">Add Game</button>
+
+              </form>
+            </div>
+
+
+            <div role="tabpanel" class="tab-pane" id="YourGame">
+              <div class="col-lg-4">
+                <div class="user-game-list">
+                  <h4>Should Be Users Title</h4>
+                  <button class="btn btn-default">Edit</button>
+                  <button class="btn btn-default">Delete</button>
+                </div>
+              </div>
+            </div>
+            <!-- <div role="tabpanel" class="tab-pane" id="messages">...</div>
+            <div role="tabpanel" class="tab-pane" id="settings">...</div> -->
+          </div>
+        
+        </div>
+  </div>
+</div>

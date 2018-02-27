@@ -59,7 +59,7 @@ authRouths.post("/login", passport.authenticate("local", {
 }));
 
 authRouths.get("/user-page", ensureLogin.ensureLoggedIn(), (req, res) => {
-  res.render("user-page", { user: req.user });
+  res.render("auth/user-page", { user: req.user });
 });
 
 authRouths.get("/logout", ensureLogin.ensureLoggedIn(), (req, res) => {
