@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-      <h1 class="moreSpace text-center">Hello User</h1>
+      <h1 class="moreSpace text-center"><%= game %></h1>
 
       <h3 class="text-center">Games</h3>
 
@@ -17,7 +17,7 @@
           <!-- Tab panes -->
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="AddGame">
-              <form action="">
+              <form action="/infoGame" method="post">
                 <div class="form-group">
                   <br>
                   <label for="Title">Game Title</label>
@@ -29,7 +29,7 @@
 
                   <br>
                   <label for="Summary">Summary</label>
-                  <textarea type="text" class="form-control" name="summery" placeholder="About your Game" rows="6"></textarea>
+                  <textarea type="text" class="form-control" name="summary" placeholder="About your Game" rows="6"></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-default" value="Add Game">Add Game</button>

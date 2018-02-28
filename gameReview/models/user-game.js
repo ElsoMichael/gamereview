@@ -8,4 +8,5 @@ const UserGameSchema = new Schema({
   _creator: { type: Schema.Types.ObjectId, ref: 'User', required: true },
 });
 
-module.exports = mongoose.model('UserGame', UserGameSchema);
+const UserGame = mongoose.model('UserGame', UserGameSchema);
+module.exports = UserGame;
