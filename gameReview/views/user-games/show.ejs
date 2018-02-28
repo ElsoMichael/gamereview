@@ -1,0 +1,26 @@
+<div class="search-background">
+  <h1 class="text-center moreSpace color-text-white"><%= info.title %></h1>
+  <div class="col-lg-2 col-lg-offset-5 edit-buttons">
+    <% if (login) { %>
+      <% if (user._id.equals(info._creator)) { %>
+        <form class="game-search-spacing edit-buttons" action="<%= info._id %>/delete" method="POST">
+          <button type="submit">Delete Game</button>
+        </form>
+        <a class="game-search-spacing" href="<%= info._id %>/edit">Edit</a>
+      <% } %>
+    <% } %>
+    </div>
+</div>
+<div class="container smallSpace moreSpaceBottom">
+  <% if (info.platform === "") { %>
+    <h2 class="text-center">Creator: <%= info.author %></h2>
+  <% } else { %>
+    <h2 class="text-center">Creator: <a class="a-link" href="<%= info.platform %>"><%= info.author %></a></h2>
+  <% } %>
+  <p class="text-center">Try: <a class="a-link" href="<%= info.link %>"><%= info.title %> here</a></p>
+
+  <div class="navbar-inverse userGameinfo-border smallSpace col-lg-6 col-lg-offset-3">
+    <p class="text-center color-text-white"><%= info.summary %></p>
+  </div>
+
+</div>

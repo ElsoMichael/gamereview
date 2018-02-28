@@ -1,0 +1,14 @@
+<div class="container moreSpaceBottom">
+  <div class="row">
+      <h1 class="text-center moreSpace">User's Game's</h1>
+      <hr>
+    <% game.forEach((userGame) => { %>
+      <div class="col-lg-4">
+        <div class="user-game-list">
+          <h2 class="text-center"><%= userGame.title %></h2>
+          <p class="text-center"><a href="<%= userGame._id %>">More!</a></p>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>

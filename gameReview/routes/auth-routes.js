@@ -62,7 +62,7 @@ authRoutes.get("/login", (req, res, next) => {
 
 // Post login with Passport authentication
 authRoutes.post("/login", passport.authenticate("local", {
-  successRedirect: "/",
+  successRedirect: "/list",
   failureRedirect: "/login",
   failureFlash: true,
   passReqToCallback: true
@@ -70,17 +70,20 @@ authRoutes.post("/login", passport.authenticate("local", {
 
 // Gets Secure page for each User
 authRoutes.get("/user-page", ensureLogin.ensureLoggedIn(), (req, res) => {
-  res.render("auth/user-page", { user: req.user, game: req.userGame });
+  res.render("auth/user-page", { user: req.user });
   consle.log(req.userGame)
 });
 
 // Grabs a Game a User Post
 authRoutes.post("/infoGame", (req, res, next) => {
+  console.log("im the creating")
   const info = {
     title: req.body.title,
     link: req.body.link,
     summary: req.body.summary,
-    _creator: req.user._id
+    _creator: req.user._id,
+    author: req.body.author,
+    platform: req.body.platform
   }
 
   // Adds it to Schema
@@ -92,7 +95,7 @@ authRoutes.post("/infoGame", (req, res, next) => {
     if (err) { return next(err) }
 
     // For now
-    return res.redirect("/");
+    return res.redirect("/list");
   });
 });
 
@@ -101,16 +104,64 @@ authRoutes.get('/list', (req, res, next) => {
   UserGame.find({}, (err, game) => {
     if (err) {return next(err) }
 
-    return res.render('games/user', { game });
+    return res.render('user-games/index', { game });
   });
 });
 
-
-
 // Logout of User Account
-authRoutes.get("/logout", ensureLogin.ensureLoggedOut(), (req, res) => {
+authRoutes.get("/logout", ensureLogin.ensureLoggedIn(), (req, res) => {
   req.logout();
   res.redirect("/");
+});
+
+// Show Individual User Game Info
+authRoutes.get('/:id', (req, res, next) => {
+  const gameId = req.params.id;
+
+  UserGame.findById(gameId, (err, info) => {
+    if (err) { return next(err); }
+    res.render('user-games/show', { info, user: req.user });
+  });
+});
+
+// Show Form to Update User Game
+authRoutes.get('/:id/edit', ensureLogin.ensureLoggedIn(), (req, res, next) => {
+  const gameId = req.params.id;
+
+  UserGame.findById(gameId, (err, info) => {
+    if (err) { return next(err); }
+    res.render('user-games/edit', { info });
+  });
+});
+
+// Show Updated User Game
+authRoutes.post('/:id', ensureLogin.ensureLoggedIn(), (req, res, next) => {
+  console.log("im the updating")
+
+  const gameId = req.params.id;
+
+  const updates = {
+    title: req.body.title,
+    link: req.body.link,
+    summary: req.body.summary,
+    author: req.body.author,
+    platform: req.body.platform
+  }
+
+  UserGame.findByIdAndUpdate(gameId, updates, (err, userGame) => {
+    if (err) { return next(err); }
+    res.redirect('/list');
+  });
+});
+
+// Delete User game from Database
+authRoutes.post('/:id/delete', ensureLogin.ensureLoggedIn(), (req, res, next) => {
+  const id = req.params.id;
+
+  UserGame.findByIdAndRemove(id, (err, info) => {
+    if (err){ return next(err); }
+    return res.redirect('/list');
+  });
 });
 
 module.exports = authRoutes;
