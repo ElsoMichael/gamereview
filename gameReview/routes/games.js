@@ -9,6 +9,9 @@ var game;
 games.post('/search', (req, res) => {
   // client.endpoint(options, [fields])
   client.games({
+    filters: {
+      'version_parent-not_exists': 1
+    },
     search: req.body.search,
     limit: 50,
     }, [
@@ -34,6 +37,17 @@ games.get('/:id', (req, res, next) => {
   client.games({
     ids: [gameId],
     fields: '*',
+    expand: [
+      'genres',
+      'platforms',
+      'themes',
+      'games',
+      'developers',
+      'publishers',
+      'game_engines',
+      'player_perspectives',
+      'game_modes',
+    ]
   })
   .then(res => {
     game = res.body;
@@ -47,21 +61,5 @@ games.get('/:id', (req, res, next) => {
   }, 1000);
 });
 
-// games.post('/:id', (req, res, next) => {
-//   const gamesId = req.params.id;
-
-//   client.games({
-//     id: gameId
-//   }, [
-//     'name'
-//   ])
-//   .then(res => {
-//     gameInfo = res.body;
-//     console.log(gameInfo);
-//   })
-//   .catch(err => {
-//     throw err;
-//   })
-// });
 
 module.exports = games;

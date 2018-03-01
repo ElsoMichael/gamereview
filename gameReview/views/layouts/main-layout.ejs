@@ -9,7 +9,8 @@
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
-        <p class="navbar-text navbar-left"><a href="/" class="navbar-link">Game Review</a></p>
+        <p class="navbar-text navbar-left"><a href="/" class="navbar-link">Game Vault</a></p>
+        <p class="navbar-text navbar-left"><a href="/list" class="navbar-link">User's Game's</a></p>
         <form class="navbar-form navbar-left" role="search" action="/games/search" method="POST">
         <div class="form-group">
           <input type="text" class="form-control form-color" placeholder="Search" name="search">
@@ -33,14 +34,15 @@
         <% } %>
       </div>
     </nav>  
+    
     <%- body -%>
 
     <footer class="footer navbar navbar-inverse">
       <div class="container">
         <div class="col-lg-4 col-lg-offset-4">
-          <p class="navbar-text text-center"><a class="navbar-link" href="http://">GitHub</a></p>
+          <p class="navbar-text text-center"><a class="navbar-link" href="https://github.com/ElsoMichael">GitHub</a></p>
           <p class="navbar-text text-center">Created by Michael Elso</p>
-          <p class="navbar-text text-center"><a class="navbar-link" href="http://">Linkedin</a></p>
+          <p class="navbar-text text-center"><a class="navbar-link" href="https://www.linkedin.com/in/michael-elso/">Linkedin</a></p>
         </div>
       </div>
     </footer>
@@ -48,6 +50,8 @@
     src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
   </body>
 </html>

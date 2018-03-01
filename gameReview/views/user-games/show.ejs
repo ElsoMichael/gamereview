@@ -1,5 +1,5 @@
 <div class="search-background">
-  <h1 class="text-center moreSpace color-text-white"><%= info.title %></h1>
+  <h1 class="text-center moreSpace color-text-black"><%= info.title %></h1>
   <div class="col-lg-2 col-lg-offset-5 edit-buttons">
     <% if (login) { %>
       <% if (user._id.equals(info._creator)) { %>
@@ -22,5 +22,8 @@
   <div class="navbar-inverse userGameinfo-border smallSpace col-lg-6 col-lg-offset-3">
     <p class="text-center color-text-white"><%= info.summary %></p>
   </div>
+  <% if (info.comment) { %>
+    <%= info.comment %>
+  <% } %>
 
 </div>

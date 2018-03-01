@@ -28,11 +28,16 @@ a {
 
 .search-background {
   padding: 90px 0;
-  background-image: url("../images/spacebackground.jpg");
-  background-size: cover;
-  background-position: center;
+  background-image: url("../images/GameVault_Banner.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 90%;
   border-bottom: 5px solid;
   box-shadow: 0px 4px 10px 0 rgba(22, 22, 22, 0.08);
+}
+
+.color-text-black {
+  color: rgb(53, 49, 49);
 }
 
 .color-text-white {
@@ -40,7 +45,7 @@ a {
 }
 
 .background-auth {
-  background-image: url("../images/spacebackground.jpg");
+  background-image: url("../images/GameVault_Screen.jpg");
   background-size: cover;
 }
 
@@ -100,7 +105,7 @@ a {
 }
 
 .edit-buttons > a {
-  color: white;
+  color: rgb(53, 49, 49);
 }
 
 .footer {
@@ -125,4 +130,8 @@ a {
 
 .a-link:hover {
   color: rgb(128, 102, 176); 
+}
+
+.background-black {
+  background-color: rgb(34, 34, 34);
 }

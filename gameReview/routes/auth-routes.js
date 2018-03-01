@@ -71,7 +71,12 @@ authRoutes.post("/login", passport.authenticate("local", {
 // Gets Secure page for each User
 authRoutes.get("/user-page", ensureLogin.ensureLoggedIn(), (req, res) => {
   res.render("auth/user-page", { user: req.user });
-  consle.log(req.userGame)
+});
+
+// Logout of User Account
+authRoutes.get("/logout", ensureLogin.ensureLoggedIn(), (req, res) => {
+  req.logout();
+  res.redirect("/");
 });
 
 // Grabs a Game a User Post
@@ -106,12 +111,6 @@ authRoutes.get('/list', (req, res, next) => {
 
     return res.render('user-games/index', { game });
   });
-});
-
-// Logout of User Account
-authRoutes.get("/logout", ensureLogin.ensureLoggedIn(), (req, res) => {
-  req.logout();
-  res.redirect("/");
 });
 
 // Show Individual User Game Info
