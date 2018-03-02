@@ -1,3 +1,4 @@
+require("dotenv").config();
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -5,6 +6,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 const expressLayouts = require('express-ejs-layouts');
+
 
 // Mongoose Config
 const mongoose = require("mongoose");
@@ -20,6 +22,8 @@ const flash = require("connect-flash");
 // IDGB API Config
 const igdb = require('igdb-api-node').default;
 const client = igdb('1accb007bd5cc4dad101e324f97acb0e');
+
+mongoose.connect(process.env.MONGODB_URI);
 
 // Models
 const User = require("./models/user");
